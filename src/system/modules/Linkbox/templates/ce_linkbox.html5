@@ -1,0 +1,44 @@
+<div class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?>
+     style="<?php echo $this->style; ?>"<?php endif; ?> xmlns="http://www.w3.org/1999/html">
+    <a href="<?php echo $this->href; ?>" class="hyperlink" title="<?php echo $this->linkTitle; ?>"<?php echo $this->attribute; ?><?php echo $this->target; ?>>
+        <?php if (!$this->addBefore): ?>
+            <div class="linkbox-textwrapper">
+                <div class="linkbox-text">
+                    <div class="linkbox-text-inner">
+                        <?php if ($this->headline): ?><<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>><?php endif; ?>
+                    <div class="linkbox-description">
+                        <?php echo $this->text; ?>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
+
+        <?php if ($this->addImage): ?>
+            <figure class="linkbox-pic image_container<?php echo $this->floatClass; ?>"<?php if ($this->margin || $this->float): ?>
+                    style="<?php echo trim($this->margin . $this->float); ?>"<?php endif; ?>>
+                <img src="<?php echo $this->src; ?>"<?php echo $this->imgSize; ?> alt="<?php echo $this->alt; ?>"<?php if ($this->title): ?>
+                     title="<?php echo $this->title; ?>"<?php endif; ?>>
+                <?php if ($this->caption): ?>
+                    <figcaption class="caption" style="width:<?php echo $this->arrSize[0]; ?>px"><?php echo $this->caption; ?></figcaption>
+                <?php endif; ?>
+                <span class="linkbox-pic-after"></span>
+            </figure>
+        <?php endif; ?>
+
+        <?php if ($this->addBefore): ?>
+            <div class="linkbox-textwrapper">
+                <div class="linkbox-text">
+                    <div class="linkbox-text-inner">
+                        <?php if ($this->headline): ?><<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>><?php endif; ?>
+                    <div class="linkbox-description">
+                        <?php echo $this->text; ?>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
+
+        <div class="linkbox-after"></div>
+    </a>
+</div>
